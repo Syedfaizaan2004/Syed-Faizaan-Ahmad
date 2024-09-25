@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="logo" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi, I'm Syed <span>Faizaan</span><br> Ahmad from India</h1>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ------------------------About-------------------------     -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/User.jpg" alt="User-photo">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>My name is <b>Syed Faizaan Ahmad</b> I have completed my 12<sup>th</sup> class in 2022 and now I am doing my B-Tech in ECE. I am interested in doing new things and wanted to push my limits and i love this because i can become strong and learn new thing if go beyond my limits.<br>I wanted to go all around the world amd wanted to do all short of things in my limited life. I am also interseted in Space exploration. </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-links" onclick="opentab('Skills', event)">Skills</p>
+                    <p class="tab-links" onclick="opentab('Experience', event)">Experience</p>
+                    <p class="tab-links" onclick="opentab('Education', event)">Education</p>
+                    <p class="tab-links" onclick="opentab('Soft_skills', event)">Soft Skills</p>
+
+                </div>
+                <div class="tab-contents active-tab" id="Skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Website interfaces</BR></li>
+                        <li><span>Frontedend Web Development</span><br>It makes a user interfaces.</BR></li>
+                        <li><span>HTML5</span><br>Structure of Website</BR></li>
+                        <li><span>CSS3</span><br>Style for Website</BR></li>
+                        <li><span>JavaScript</span><br>Give a function to the website</BR></li>
+                        <li><span>Java</span><br>Data Structures and Algorithms</BR></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Experience">
+                    <ul>
+                        <li><span>2024 March</span><br>I have made games</br></li>
+                        <li><span>2024 September</span><br>I have made a my portfolio</br></li>
+                        <li><span>2024 September</span><br>MSC Web Devlopment Member</br></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>2023 - 2027</span><br>B-Tech from MSIT Janakpuri</br></li>
+                        <li><span>2022</span><br>XII<sup>th</sup>from School of Excellence</br></li>
+                        <li><span>2020</span><br>X<sup>th</sup>from SBV</br></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Soft_skills">
+                    <ul>
+                        <li>Public Speaking</li>
+                        <li>Team Managment</li>
+                        <li>Leadership Quality</li>
+                        <li>Traveling</li>
+                        <li>Space Researcher</li>
+                        <li>Can speake two language</li>
+                        <li>Reading Books</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -------------Service------------------------ -->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Frontedend Web Devlopment</h2>
+                <p>I have learned HTML, CSS, JavaScript and bootstrap and i have made many project but still practicing.</p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i>
+                <h2>Data Structures and Algorithms</h2>
+                <p>I am learning DSA in Java. I have completed basic and doing higher DSA topic.</p>
+                <a href="#">learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-git"></i>
+                <h2>Git and Github</h2>
+                <p>I have learned git and github and deploy many website.</p>
+                <a href="https://github.com/Syedfaizaan2004" target="_blank">learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -----------------------Portfolio------------------- -->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work_1.png" alt="work-1">
+                <div class="layer">
+                    <h3>Guess the Number</h3>
+                    <p>In this game you have to enter the range and from that you have to select the right number.</p>
+                    <a href="https://syedfaizaan2004.github.io/Guessing-a-number-Game/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://github.com/Syedfaizaan2004/Guessing-a-number-Game" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work_2.jpeg.png" alt="work-2">
+                <div class="layer">
+                    <h3>Simon Says Game</h3>
+                    <p>It is also a game in which you have to rember a color that flashes and click on it.</p>
+                    <a href="https://syedfaizaan2004.github.io/simon-says-game/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://github.com/Syedfaizaan2004/simon-says-game" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work_3.jpeg" alt="work-3">
+                <div class="layer">
+                    <h3>music app</h3>
+                    <p>It is colone of Spotify music app. It was my first Development made by using HTML and CSS.</p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">see more</a>
+    </div>
+</div>
+
+<!-- ------------------------------------Contract--------------------------------------------- -->
+
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>Syedashffaizaan1999@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>8448201551</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/syed.faizaanahmad.3/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/syedfaizaanahmad49/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/syed-faizaan-ahmad/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Syedfaizaan2004" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                </div>
+                <a href="images/Syed faizaan CV.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="your email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> Syed Faizaan Ahmad. made with <i class="fa-solid fa-heart"></i> </p>
+    </div>
+</div>
+
+</body>
+<script src="app.js"></script>
+</html>
