@@ -194,7 +194,11 @@ function renderAbout() {
   const aboutEl = document.getElementById('about-text');
   const resumeBtn = document.getElementById('resume-btn');
   if (aboutEl)   aboutEl.innerHTML = data.about.text;
-  if (resumeBtn) resumeBtn.href    = data.about.resumeLink || 'images/Syed faizaan CV.pdf';
+  if (resumeBtn) {
+    // Append cache-busting timestamp so browser always serves the latest PDF
+    const base = data.about.resumeLink || 'images/Syed faizaan CV.pdf';
+    resumeBtn.href = base + '?v=' + Date.now();
+  }
 
   // Render tab contents from data
   const tabs = data.about.tabs || {};
