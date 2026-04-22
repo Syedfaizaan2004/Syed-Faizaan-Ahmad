@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Faizaan Ahmad — Portfolio</title>
+  <meta name="description" content="Portfolio of Syed Faizaan Ahmad — ECE undergraduate, web developer and ML enthusiast from India.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body>
+
+  <!-- ── Scroll Progress ── -->
+  <div id="scroll-progress"></div>
+
+  <!-- ── Custom Cursor ── -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── Loader ── -->
+  <div id="loader">
+    <div class="loader-ring"></div>
+    <span class="loader-text">Loading…</span>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════ -->
+  <nav>
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Syed Faizaan Ahmad logo">
+    </div>
+
+    <ul id="nav-menu">
+      <button id="nav-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button id="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════ -->
+  <section id="hero">
+    <!-- Background image layer -->
+    <div class="hero-bg-img"></div>
+    <!-- Dark gradient overlay -->
+    <div class="hero-overlay"></div>
+    <!-- Blobs still sit on top for depth -->
+    <div class="hero-bg">
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+    </div>
+
+    <div class="hero-inner hero-inner-centered" data-reveal="fade-up">
+      <div class="hero-content">
+        <p class="hero-greeting">👋 Hello, World!</p>
+        <h1 class="hero-name">Hi, I'm <span>Syed Faizaan</span><br>Ahmad</h1>
+        <p class="hero-typing">
+          <span class="typing-wrapper">
+            <span id="typing-text">Web Developer</span><span class="typing-cursor"></span>
+          </span>
+        </p>
+        <p class="hero-desc">
+          A passionate ECE undergraduate from India, building the web one pixel at a time.
+          I love crafting beautiful UIs, solving algorithmic problems and exploring the frontiers of AI.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> View Projects</a>
+          <a id="resume-btn" href="images/Syed faizaan CV.pdf" download class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <i class="fa-solid fa-chevron-down"></i>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       COUNTERS STRIP
+  ════════════════════════════════════════════════ -->
+  <div id="counters">
+    <div class="counters-grid">
+      <div class="counter-item">
+        <div class="counter-number" id="counter-projects" data-target="10">0+</div>
+        <div class="counter-label">Projects Built</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-number" id="counter-skills" data-target="12">0+</div>
+        <div class="counter-label">Skills Mastered</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-number" id="counter-experience" data-target="2">0+</div>
+        <div class="counter-label">Years Learning</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="section-tag">About Me</div>
+    <div class="about-row">
+
+      <div class="about-img-wrap" data-reveal="fade-up">
+        <img src="images/User.jpg" alt="Syed Faizaan Ahmad">
+        <div class="about-badge">
+          <i class="fa-solid fa-code"></i>
+          <div>
+            <strong>B-Tech ECE</strong>
+            <small>MSIT Janakpuri · 2023–2027</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-col-2" data-reveal="fade-up">
+        <h2 class="section-title">Who Am <span>I?</span></h2>
+        <p id="about-text" class="section-subtitle">
+          I'm <strong>Syed Faizaan Ahmad</strong>, a passionate ECE undergraduate at MSIT Janakpuri with a deep love
+          for web development, algorithms and emerging technology.
+        </p>
+
+        <!-- Tabs -->
+        <div class="tab-titles">
+          <button class="tab-links active-link" data-tab="Skills">Skills</button>
+          <button class="tab-links" data-tab="Experience">Experience</button>
+          <button class="tab-links" data-tab="Education">Education</button>
+          <button class="tab-links" data-tab="Soft_skills">Soft Skills</button>
+        </div>
+
+        <div class="tab-contents active-tab" id="Skills">
+          <ul>
+            <li><span>UI / UX</span>Designing beautiful website interfaces</li>
+            <li><span>Frontend Dev</span>HTML5, CSS3, JavaScript, React</li>
+            <li><span>Backend / DSA</span>Java, Data Structures & Algorithms</li>
+            <li><span>Tools</span>Git, GitHub, VS Code, Linux</li>
+          </ul>
+        </div>
+
+        <div class="tab-contents" id="Experience">
+          <ul>
+            <li><span>March 2024</span>Built interactive browser games (Guess the Number, Simon Says)</li>
+            <li><span>September 2024</span>Created and deployed my personal portfolio</li>
+            <li><span>September 2024</span>Joined MSC Web Development Club</li>
+          </ul>
+        </div>
+
+        <div class="tab-contents" id="Education">
+          <ul>
+            <li><span>2023 – 2027</span>B-Tech ECE · MSIT Janakpuri, New Delhi</li>
+            <li><span>2022</span>XII<sup>th</sup> · School of Excellence</li>
+            <li><span>2020</span>X<sup>th</sup> · SBV School</li>
+          </ul>
+        </div>
+
+        <div class="tab-contents" id="Soft_skills">
+          <ul>
+            <li><span>Communication</span>Public Speaking & Team Management</li>
+            <li><span>Leadership</span>Leadership Quality & Problem Solving</li>
+            <li><span>Interests</span>Space Research · Traveling · Reading Books</li>
+            <li><span>Languages</span>English & Urdu / Hindi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       SKILLS (Dynamic — rendered by ui.js)
+  ════════════════════════════════════════════════ -->
+  <section id="skills">
+    <div class="section-tag">What I Know</div>
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <p class="section-subtitle">Technologies and tools I work with regularly.</p>
+    <div id="skills-grid"></div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       SERVICES
+  ════════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="section-tag">What I Offer</div>
+    <h2 class="section-title">My <span>Services</span></h2>
+    <p class="section-subtitle">Here's what I can help you build.</p>
+
+    <div class="services-grid">
+      <div class="service-card" data-reveal="fade-up">
+        <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Frontend Development</h3>
+        <p>I craft pixel-perfect, responsive UIs using HTML5, CSS3, JavaScript and React. Clean code, great UX.</p>
+      </div>
+      <div class="service-card" data-reveal="fade-up">
+        <div class="service-icon"><i class="fa-brands fa-java"></i></div>
+        <h3>DSA & Problem Solving</h3>
+        <p>Solid foundation in Data Structures & Algorithms using Java — from basics to advanced topics.</p>
+      </div>
+      <div class="service-card" data-reveal="fade-up">
+        <div class="service-icon"><i class="fa-brands fa-git-alt"></i></div>
+        <h3>Git & GitHub</h3>
+        <p>Version control, branching strategies, and deploying projects via GitHub Pages with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       PROJECTS (Dynamic — rendered by ui.js)
+  ════════════════════════════════════════════════ -->
+  <section id="projects">
+    <div class="section-tag">My Work</div>
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <p class="section-subtitle">A selection of things I've built. More on my GitHub.</p>
+
+    <div class="filter-bar" id="project-filters"></div>
+    <div id="projects-grid"></div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       GITHUB STATS
+  ════════════════════════════════════════════════ -->
+  <section id="github-stats">
+    <div class="section-tag">GitHub</div>
+    <h2 class="section-title">My <span>GitHub Stats</span></h2>
+    <p class="section-subtitle" style="margin-left:auto;margin-right:auto;text-align:center">Live stats pulled straight from GitHub.</p>
+    <div class="stats-grid">
+      <img src="https://github-readme-stats.vercel.app/api?username=Syedfaizaan2004&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=6c63ff&icon_color=00d4ff&text_color=e8e8ff" alt="GitHub Stats">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Syedfaizaan2004&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=6c63ff&text_color=e8e8ff" alt="Top Languages">
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title">Contact <span>Me</span></h2>
+
+    <div class="contact-row">
+      <div class="contact-info" data-reveal="fade-up">
+        <h3>Let's talk!</h3>
+        <p>Feel free to reach out for collaborations, project ideas, or just to say hello.</p>
+
+        <div class="contact-detail">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <strong>Email</strong>
+            <span>Syedashffaizaan1999@gmail.com</span>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <strong>Phone</strong>
+            <span>+91 8448201551</span>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://www.facebook.com/syed.faizaanahmad.3/" target="_blank" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/syedfaizaanahmad49/" target="_blank" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/syed-faizaan-ahmad/" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/Syedfaizaan2004" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form" data-reveal="fade-up">
+        <form name="submit-to-google-sheet" id="contact-form">
+          <div class="form-row">
+            <input type="text" name="Name" id="form-name" placeholder="Your Name" required>
+            <input type="email" name="Email" id="form-email" placeholder="Your Email" required>
+          </div>
+          <textarea name="Message" id="form-message" rows="5" placeholder="Your Message…"></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>Copyright &copy; <span>Syed Faizaan Ahmad</span> · Made with <i class="fa-solid fa-heart"></i> in India</p>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════
+       DASHBOARD OVERLAY (hidden by default)
+       Trigger: Ctrl + Shift + D
+  ════════════════════════════════════════════════ -->
+  <div id="dashboard-overlay">
+    <div class="dash-panel">
+      <div class="dash-header">
+        <div class="dash-title"><i class="fa-solid fa-gauge-high"></i> Admin Dashboard</div>
+        <button class="dash-close" onclick="closeDashboard()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Dashboard Tabs -->
+      <div class="dash-tabs">
+        <button class="dash-tab-btn active" data-tab="projects"><i class="fa-solid fa-folder-open"></i> Projects</button>
+        <button class="dash-tab-btn" data-tab="skills"><i class="fa-solid fa-star"></i> Skills</button>
+        <button class="dash-tab-btn" data-tab="about"><i class="fa-solid fa-user"></i> About</button>
+        <button class="dash-tab-btn" data-tab="resume"><i class="fa-solid fa-file"></i> Resume</button>
+        <button class="dash-tab-btn" data-tab="github"><i class="fa-brands fa-github"></i> Import</button>
+      </div>
+
+      <!-- ── Projects Tab ── -->
+      <div class="dash-tab-content active" id="dash-projects">
+        <div class="dash-section-title"><i class="fa-solid fa-list"></i> Existing Projects</div>
+        <div id="dash-projects-list"></div>
+
+        <hr class="dash-divider">
+
+        <div class="dash-section-title" id="proj-form-title"><i class="fa-solid fa-plus"></i> Add New Project</div>
+        <form class="dash-form" id="project-form">
+          <input type="hidden" id="proj-id">
+          <div class="dash-form-row">
+            <div><label>Title</label><input type="text" id="proj-title" placeholder="Project Name" required></div>
+            <div><label>Tech Stack (comma separated)</label><input type="text" id="proj-tech" placeholder="HTML, CSS, JS"></div>
+          </div>
+          <div><label>Description</label><textarea id="proj-desc" placeholder="Short description…" required></textarea></div>
+          <div class="dash-form-row">
+            <div><label>Live URL</label><input type="text" id="proj-live" placeholder="https://…"></div>
+            <div><label>GitHub URL</label><input type="text" id="proj-github" placeholder="https://github.com/…"></div>
+          </div>
+          <div><label>Image path / URL</label><input type="text" id="proj-image" placeholder="images/work_1.png"></div>
+          <div class="dash-form-actions">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Save Project</button>
+            <button type="button" class="btn btn-outline btn-sm" id="proj-cancel" style="display:none"><i class="fa-solid fa-xmark"></i> Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ── Skills Tab ── -->
+      <div class="dash-tab-content" id="dash-skills">
+        <div class="dash-section-title"><i class="fa-solid fa-list"></i> Existing Skills</div>
+        <div id="dash-skills-list"></div>
+
+        <hr class="dash-divider">
+
+        <div class="dash-section-title"><i class="fa-solid fa-plus"></i> Add New Skill</div>
+        <form class="dash-form" id="skill-form">
+          <div class="dash-form-row">
+            <div><label>Skill Name</label><input type="text" id="skill-name" placeholder="e.g. Vue.js" required></div>
+            <div><label>Category</label><input type="text" id="skill-category" placeholder="Frontend / Backend / Tools"></div>
+          </div>
+          <div class="dash-form-row">
+            <div>
+              <label>Font Awesome Icon class</label>
+              <input type="text" id="skill-icon" placeholder="fa-brands fa-vuejs">
+              <p class="dash-help">Find icons at <code>fontawesome.com/icons</code></p>
+            </div>
+            <div><label>Icon Colour</label><input type="color" id="skill-color" value="#6c63ff"></div>
+          </div>
+          <div class="dash-form-actions">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Add Skill</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ── About Tab ── -->
+      <div class="dash-tab-content" id="dash-about">
+        <div class="dash-section-title"><i class="fa-solid fa-pen"></i> Edit About Text</div>
+        <form class="dash-form" id="about-form">
+          <div><label>Bio text (plain text or HTML)</label><textarea id="about-editor" rows="5" placeholder="Write your bio…"></textarea></div>
+
+          <hr class="dash-divider">
+          <div class="dash-section-title" style="margin-bottom:14px"><i class="fa-solid fa-list-ul"></i> Tab Contents (HTML)</div>
+          <p class="dash-help" style="margin-bottom:16px">Use <code>&lt;ul&gt;&lt;li&gt;&lt;span&gt;Title&lt;/span&gt;Description&lt;/li&gt;&lt;/ul&gt;</code> format.</p>
+
+          <div><label>🛠 Skills tab</label><textarea id="tab-skills-editor" rows="6" placeholder="&lt;ul&gt;&#10;  &lt;li&gt;&lt;span&gt;Category&lt;/span&gt;Description&lt;/li&gt;&#10;&lt;/ul&gt;"></textarea></div>
+          <div><label>💼 Experience tab</label><textarea id="tab-exp-editor" rows="6" placeholder="&lt;ul&gt;&#10;  &lt;li&gt;&lt;span&gt;Month Year&lt;/span&gt;What you did&lt;/li&gt;&#10;&lt;/ul&gt;"></textarea></div>
+          <div><label>🎓 Education tab</label><textarea id="tab-edu-editor" rows="6" placeholder="&lt;ul&gt;&#10;  &lt;li&gt;&lt;span&gt;Year range&lt;/span&gt;Degree · Institution&lt;/li&gt;&#10;&lt;/ul&gt;"></textarea></div>
+          <div><label>🌟 Soft Skills tab</label><textarea id="tab-soft-editor" rows="6" placeholder="&lt;ul&gt;&#10;  &lt;li&gt;&lt;span&gt;Category&lt;/span&gt;Detail&lt;/li&gt;&#10;&lt;/ul&gt;"></textarea></div>
+
+          <hr class="dash-divider">
+          <div class="dash-section-title" style="margin-bottom:14px"><i class="fa-solid fa-chart-bar"></i> Counters</div>
+          <div class="dash-form-row">
+            <div><label>Projects counter</label><input type="number" id="counter-proj-input" min="0"></div>
+            <div><label>Skills counter</label><input type="number" id="counter-skills-input" min="0"></div>
+          </div>
+          <div><label>Experience counter (years)</label><input type="number" id="counter-exp-input" min="0"></div>
+          <div class="dash-form-actions">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Save About</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ── Resume Tab ── -->
+      <div class="dash-tab-content" id="dash-resume">
+        <div class="dash-section-title"><i class="fa-solid fa-file-pdf"></i> Resume / CV Link</div>
+        <form class="dash-form" id="resume-form">
+          <div>
+            <label>PDF path or URL</label>
+            <input type="text" id="resume-link-input" placeholder="images/Syed faizaan CV.pdf">
+            <p class="dash-help">Relative path like <code>images/resume.pdf</code> or a full URL.</p>
+          </div>
+          <div class="dash-form-actions">
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Update Link</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ── GitHub Import Tab ── -->
+      <div class="dash-tab-content" id="dash-github">
+        <div class="dash-section-title"><i class="fa-brands fa-github"></i> Import from GitHub</div>
+        <div class="dash-form">
+          <div>
+            <label>GitHub Username</label>
+            <input type="text" id="gh-username" placeholder="e.g. Syedfaizaan2004" value="Syedfaizaan2004">
+          </div>
+          <div class="dash-form-actions">
+            <button id="gh-fetch-btn" class="btn btn-primary btn-sm" onclick="fetchGitHubRepos()">
+              <i class="fa-solid fa-rotate"></i> Fetch Repos
+            </button>
+          </div>
+        </div>
+
+        <div id="gh-status" style="display:none;text-align:center;padding:30px;color:var(--muted)">
+          <i class="fa-solid fa-spinner fa-spin" style="font-size:1.6rem;display:block;margin-bottom:12px"></i>
+          Fetching repositories…
+        </div>
+
+        <div id="gh-repo-list" style="margin-top:20px"></div>
+
+        <div id="gh-actions" style="display:none;justify-content:flex-end;gap:10px;margin-top:16px">
+          <button class="btn btn-outline btn-sm" onclick="selectAllRepos(true)"><i class="fa-solid fa-check-double"></i> Select All</button>
+          <button class="btn btn-outline btn-sm" onclick="selectAllRepos(false)"><i class="fa-solid fa-xmark"></i> Deselect All</button>
+          <button class="btn btn-primary btn-sm" onclick="importSelectedRepos()"><i class="fa-solid fa-file-import"></i> Import Selected</button>
+        </div>
+      </div>
+
+    </div><!-- /.dash-panel -->
+  </div><!-- /#dashboard-overlay -->
+
+  <!-- ── Toast ── -->
+  <div id="dash-toast"></div>
+
+  <!-- ════════════════════════════════════════════════
+       SCRIPTS
+       Order matters: data → ui → dashboard → app (contact form)
+  ════════════════════════════════════════════════ -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>

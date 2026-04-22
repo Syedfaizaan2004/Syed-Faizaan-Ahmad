@@ -4,25 +4,25 @@
 //  Password: faizaan@admin  (change DASHBOARD_PASSWORD below)
 // ============================================================
 
-const DASHBOARD_PASSWORD = 'faizaan@admin';
+const DASHBOARD_PASSWORD = 'syed';
 let dashUnlocked = false;
 
 // ── Auto-sync counters to real array lengths ──────────────
 function syncCounters() {
   const data = getData();
   data.about.counters.projects = data.projects.length;
-  data.about.counters.skills   = data.skills.length;
+  data.about.counters.skills = data.skills.length;
   saveData(data);
   // Update counter display on portfolio
   const projEl = document.getElementById('counter-projects');
   const skillEl = document.getElementById('counter-skills');
-  if (projEl)  { projEl.dataset.target  = data.about.counters.projects;  projEl.textContent  = data.about.counters.projects + '+'; }
-  if (skillEl) { skillEl.dataset.target = data.about.counters.skills;    skillEl.textContent = data.about.counters.skills    + '+'; }
+  if (projEl) { projEl.dataset.target = data.about.counters.projects; projEl.textContent = data.about.counters.projects + '+'; }
+  if (skillEl) { skillEl.dataset.target = data.about.counters.skills; skillEl.textContent = data.about.counters.skills + '+'; }
   // Also update the About-tab input fields if dashboard is open
   const pIn = document.getElementById('counter-proj-input');
   const sIn = document.getElementById('counter-skills-input');
-  if (pIn)  pIn.value  = data.about.counters.projects;
-  if (sIn)  sIn.value  = data.about.counters.skills;
+  if (pIn) pIn.value = data.about.counters.projects;
+  if (sIn) sIn.value = data.about.counters.skills;
 }
 
 // ── Keyboard Trigger ─────────────────────────────────────────
@@ -95,15 +95,15 @@ function loadProjectsList() {
 function editProject(id) {
   const p = getData().projects.find(x => x.id === id);
   if (!p) return;
-  document.getElementById('proj-id').value       = p.id;
-  document.getElementById('proj-title').value    = p.title;
-  document.getElementById('proj-desc').value     = p.description;
-  document.getElementById('proj-live').value     = p.liveLink;
-  document.getElementById('proj-github').value   = p.githubLink;
-  document.getElementById('proj-image').value    = p.image;
-  document.getElementById('proj-tech').value     = p.techStack.join(', ');
+  document.getElementById('proj-id').value = p.id;
+  document.getElementById('proj-title').value = p.title;
+  document.getElementById('proj-desc').value = p.description;
+  document.getElementById('proj-live').value = p.liveLink;
+  document.getElementById('proj-github').value = p.githubLink;
+  document.getElementById('proj-image').value = p.image;
+  document.getElementById('proj-tech').value = p.techStack.join(', ');
   document.getElementById('proj-form-title').textContent = '✏️ Edit Project';
-  document.getElementById('proj-cancel').style.display   = 'inline-flex';
+  document.getElementById('proj-cancel').style.display = 'inline-flex';
   document.getElementById('project-form').scrollIntoView({ behavior: 'smooth' });
 }
 
@@ -118,9 +118,9 @@ function deleteProject(id) {
 
 function clearProjectForm() {
   document.getElementById('proj-id').value = '';
-  ['proj-title','proj-desc','proj-live','proj-github','proj-image','proj-tech'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('proj-form-title').textContent          = '➕ Add New Project';
-  document.getElementById('proj-cancel').style.display            = 'none';
+  ['proj-title', 'proj-desc', 'proj-live', 'proj-github', 'proj-image', 'proj-tech'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('proj-form-title').textContent = '➕ Add New Project';
+  document.getElementById('proj-cancel').style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -129,15 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', e => {
     e.preventDefault();
     const data = getData();
-    const id   = document.getElementById('proj-id').value;
+    const id = document.getElementById('proj-id').value;
     const proj = {
-      id:          id || 'p' + Date.now(),
-      title:       document.getElementById('proj-title').value.trim(),
+      id: id || 'p' + Date.now(),
+      title: document.getElementById('proj-title').value.trim(),
       description: document.getElementById('proj-desc').value.trim(),
-      liveLink:    document.getElementById('proj-live').value.trim() || '#',
-      githubLink:  document.getElementById('proj-github').value.trim() || '#',
-      image:       document.getElementById('proj-image').value.trim() || 'images/work_1.png',
-      techStack:   document.getElementById('proj-tech').value.split(',').map(s => s.trim()).filter(Boolean)
+      liveLink: document.getElementById('proj-live').value.trim() || '#',
+      githubLink: document.getElementById('proj-github').value.trim() || '#',
+      image: document.getElementById('proj-image').value.trim() || 'images/work_1.png',
+      techStack: document.getElementById('proj-tech').value.split(',').map(s => s.trim()).filter(Boolean)
     };
     if (id) { const i = data.projects.findIndex(p => p.id === id); if (i > -1) data.projects[i] = proj; }
     else data.projects.push(proj);
@@ -183,10 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const data = getData();
     data.skills.push({
-      id:       's' + Date.now(),
-      name:     document.getElementById('skill-name').value.trim(),
-      icon:     document.getElementById('skill-icon').value.trim(),
-      color:    document.getElementById('skill-color').value,
+      id: 's' + Date.now(),
+      name: document.getElementById('skill-name').value.trim(),
+      icon: document.getElementById('skill-icon').value.trim(),
+      color: document.getElementById('skill-color').value,
       category: document.getElementById('skill-category').value.trim()
     });
     saveData(data); form.reset(); loadSkillsList(); renderSkills();
@@ -201,10 +201,21 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadAboutForm() {
   const data = getData();
   const plain = data.about.text.replace(/<[^>]+>/g, '');
-  document.getElementById('about-editor').value         = plain;
+  document.getElementById('about-editor').value = plain;
   document.getElementById('counter-proj-input').value   = data.about.counters.projects;
   document.getElementById('counter-skills-input').value = data.about.counters.skills;
   document.getElementById('counter-exp-input').value    = data.about.counters.experience;
+
+  // Load tab HTML into editors
+  const tabs = data.about.tabs || {};
+  const tabSkills = document.getElementById('tab-skills-editor');
+  const tabExp    = document.getElementById('tab-exp-editor');
+  const tabEdu    = document.getElementById('tab-edu-editor');
+  const tabSoft   = document.getElementById('tab-soft-editor');
+  if (tabSkills) tabSkills.value = tabs.skills     || '';
+  if (tabExp)    tabExp.value    = tabs.experience  || '';
+  if (tabEdu)    tabEdu.value    = tabs.education   || '';
+  if (tabSoft)   tabSoft.value   = tabs.softSkills  || '';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -217,6 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
     data.about.counters.projects   = parseInt(document.getElementById('counter-proj-input').value)   || 0;
     data.about.counters.skills     = parseInt(document.getElementById('counter-skills-input').value) || 0;
     data.about.counters.experience = parseInt(document.getElementById('counter-exp-input').value)    || 0;
+    // Save tab HTML
+    data.about.tabs = {
+      skills:     document.getElementById('tab-skills-editor')?.value || '',
+      experience: document.getElementById('tab-exp-editor')?.value    || '',
+      education:  document.getElementById('tab-edu-editor')?.value    || '',
+      softSkills: document.getElementById('tab-soft-editor')?.value   || ''
+    };
     saveData(data); renderAbout(); initCounters();
     showToast('✅ About section updated!');
   });
@@ -260,20 +278,20 @@ async function fetchGitHubRepos() {
   const username = document.getElementById('gh-username').value.trim();
   if (!username) { showToast('⚠️ Enter a GitHub username'); return; }
 
-  const status   = document.getElementById('gh-status');
+  const status = document.getElementById('gh-status');
   const repoList = document.getElementById('gh-repo-list');
-  const actions  = document.getElementById('gh-actions');
-  const btn      = document.getElementById('gh-fetch-btn');
+  const actions = document.getElementById('gh-actions');
+  const btn = document.getElementById('gh-fetch-btn');
 
   // Show loading state
-  status.style.display   = 'block';
-  repoList.innerHTML     = '';
-  actions.style.display  = 'none';
+  status.style.display = 'block';
+  repoList.innerHTML = '';
+  actions.style.display = 'none';
   btn.disabled = true;
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fetching…';
 
   try {
-    const res  = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+    const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
     if (!res.ok) throw new Error(res.status === 404 ? 'User not found' : 'GitHub API error');
     ghFetchedRepos = await res.json();
 
@@ -338,7 +356,7 @@ function importSelectedRepos() {
 
   checked.forEach(cb => {
     const repoId = parseInt(cb.dataset.id);
-    const repo   = ghFetchedRepos.find(r => r.id === repoId);
+    const repo = ghFetchedRepos.find(r => r.id === repoId);
     if (!repo) return;
 
     // Skip duplicates
@@ -349,13 +367,13 @@ function importSelectedRepos() {
     const tags = repo.topics?.length ? repo.topics : (repo.language ? [repo.language] : ['GitHub']);
 
     data.projects.push({
-      id:          'gh_' + repo.id,
-      title:       repo.name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+      id: 'gh_' + repo.id,
+      title: repo.name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
       description: repo.description || `A project by ${repo.owner?.login || 'me'} on GitHub.`,
-      liveLink:    repo.homepage || '#',
-      githubLink:  repo.html_url,
-      image:       customImg || 'images/work_1.png',
-      techStack:   tags
+      liveLink: repo.homepage || '#',
+      githubLink: repo.html_url,
+      image: customImg || 'images/work_1.png',
+      techStack: tags
     });
     existingLinks.add(repo.html_url);
     added++;

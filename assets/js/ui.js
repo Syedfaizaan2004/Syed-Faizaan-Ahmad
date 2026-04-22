@@ -188,13 +188,26 @@ function renderSkills() {
   initScrollReveal();
 }
 
-// ── Render About Text ─────────────────────────────────────────
+// ── Render About Text ─────────────────────────────────────
 function renderAbout() {
   const data = getData();
   const aboutEl = document.getElementById('about-text');
   const resumeBtn = document.getElementById('resume-btn');
-  if (aboutEl) aboutEl.innerHTML = data.about.text;
-  if (resumeBtn) resumeBtn.href = data.about.resumeLink || 'images/Syed faizaan CV.pdf';
+  if (aboutEl)   aboutEl.innerHTML = data.about.text;
+  if (resumeBtn) resumeBtn.href    = data.about.resumeLink || 'images/Syed faizaan CV.pdf';
+
+  // Render tab contents from data
+  const tabs = data.about.tabs || {};
+  const tabMap = {
+    'Skills':     tabs.skills,
+    'Experience': tabs.experience,
+    'Education':  tabs.education,
+    'Soft_skills': tabs.softSkills
+  };
+  Object.entries(tabMap).forEach(([id, html]) => {
+    const el = document.getElementById(id);
+    if (el && html) el.innerHTML = html;
+  });
 }
 
 // ── Mobile Nav ────────────────────────────────────────────────

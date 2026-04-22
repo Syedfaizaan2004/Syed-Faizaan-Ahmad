@@ -1,69 +1,39 @@
-var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-var sidemenu = document.getElementById("sidemenu");
-
-// -------------------------Name----------------------------------
-
-
-// -----------------------------skills----------------------------------------
-
- 
-
-// --------------------------- tabs----------------------
-
-function opentab(tabname, event) {
-    for (var tablink of tablinks) {
-        tablink.classList.remove("active-link");
-    }
-
-    for (var tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-    }
-
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
-
-function openmenu(){
-    sidemenu.style.right = "0";
-}
-
-function closemenu() {
-    sidemenu.style.right = "-200px";
-}
-
-// ----------------------------------------Google sheet-------------------------------------
-
+// ============================================================
+//  app.js  —  Contact Form → Google Sheets
+// ============================================================
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwKmjG3NyNpPrtA5bRSopIAyI7yn-M5KIMtI-4XpOA0hxy2QxYySDxpqj0zQdE_n-4u/exec';
 
-const form = document.forms['submit-to-google-sheet'];
+document.addEventListener('DOMContentLoaded', () => {
+  const form             = document.forms['submit-to-google-sheet'];
+  const messageContainer = document.getElementById('msg');
 
-const messageContainer = document.getElementById('msg');
+  if (!form || !messageContainer) return;
 
-form.addEventListener('submit', e => {
-  e.preventDefault(); 
+  form.addEventListener('submit', e => {
+    e.preventDefault();
 
-  fetch(scriptURL, {
-    method: 'POST',
-    body: new FormData(form) 
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.result === 'success') {
-        messageContainer.textContent = 'Form submitted successfully!';
-        messageContainer.style.color = 'green';
+    messageContainer.textContent  = 'Sending…';
+    messageContainer.style.color  = 'var(--muted)';
 
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.result === 'success') {
+        messageContainer.textContent = '✅ Message sent successfully!';
+        messageContainer.style.color = 'var(--success)';
         form.reset();
-    }
-    else {
-        messageContainer.textContent = 'Form submission failed';
-        messageContainer.style.color = 'red';
-    }
-  })
-
-  .catch (error => {
-    messageContainer.textContent = 'An error occurred:' + error.message;
-    messageContainer.style.color = 'red';
+      } else {
+        messageContainer.textContent = '❌ Submission failed. Please try again.';
+        messageContainer.style.color = 'var(--danger)';
+      }
+    })
+    .catch(error => {
+      messageContainer.textContent = '⚠️ An error occurred: ' + error.message;
+      messageContainer.style.color = 'var(--danger)';
+    });
   });
 });

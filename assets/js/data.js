@@ -49,7 +49,13 @@ const DEFAULT_DATA = {
   about: {
     text: "I'm <strong>Syed Faizaan Ahmad</strong>, a passionate ECE undergraduate at MSIT Janakpuri (2023–2027) with a deep love for web development, algorithms, and emerging technology. I completed my 12th from School of Excellence in 2022 and I constantly push my limits by building new projects and exploring Machine Learning and AI. Driven by curiosity — from crafting pixel-perfect UIs to studying space exploration — my goal is to create technology that makes a real-world impact.",
     resumeLink: 'images/Syed faizaan CV.pdf',
-    counters: { projects: 10, skills: 12, experience: 2 }
+    counters: { projects: 10, skills: 12, experience: 2 },
+    tabs: {
+      skills:     '<ul>\n  <li><span>UI / UX</span>Designing beautiful website interfaces</li>\n  <li><span>Frontend Dev</span>HTML5, CSS3, JavaScript, React</li>\n  <li><span>Backend / DSA</span>Java, Data Structures &amp; Algorithms</li>\n  <li><span>Tools</span>Git, GitHub, VS Code, Linux</li>\n</ul>',
+      experience: '<ul>\n  <li><span>March 2024</span>Built interactive browser games (Guess the Number, Simon Says)</li>\n  <li><span>September 2024</span>Created and deployed my personal portfolio</li>\n  <li><span>September 2024</span>Joined MSC Web Development Club</li>\n</ul>',
+      education:  '<ul>\n  <li><span>2023 – 2027</span>B-Tech ECE · MSIT Janakpuri, New Delhi</li>\n  <li><span>2022</span>XII<sup>th</sup> · School of Excellence</li>\n  <li><span>2020</span>X<sup>th</sup> · SBV School</li>\n</ul>',
+      softSkills: '<ul>\n  <li><span>Communication</span>Public Speaking &amp; Team Management</li>\n  <li><span>Leadership</span>Leadership Quality &amp; Problem Solving</li>\n  <li><span>Interests</span>Space Research · Traveling · Reading Books</li>\n  <li><span>Languages</span>English &amp; Urdu / Hindi</li>\n</ul>'
+    }
   }
 };
 
